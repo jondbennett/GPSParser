@@ -13,21 +13,30 @@ The GPSDefs.h file lets you indicate (at compile time) which GPS sentences you w
 that is unnecessary is removed from the structure at compile time so the memory footprint is as small as possible.
 
 So...
-Instantiate the object:  
+Instantiate the object:
+```
 CGPSParser gpsParser;  
+```
 
-Reset it whenever you want...  
+Reset it whenever you want...
+```
 gpsParser.reset();  
+```
 
-Give it some data to parse  
+Give it some data to parse
+```
 unsigned char dataBuffer[???];  
+unsigned int dataLen;
 
 gpsParser.parse(dataBuffer, dataLen);  
+```
 
-And get its data  
+And get its data
+```
 double latitude;  
 if(gpsParser.getGPSData().m_GPSLocked)  
 	latitude = gpsParser.getGPSData().m_position.m_lat;  
+```
 
 Finally, there is a CGPSPos object that can be used to measure distance between two points, heading from one point to another,
 and deal with movement. It can be ordered to displace itself by some distance along a radial.
