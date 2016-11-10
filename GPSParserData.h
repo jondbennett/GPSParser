@@ -164,7 +164,7 @@ class CGPSParser_SatInfo
 };
 #endif
 
-class CGPSParser_Data
+class CGPSParserData
 {
 	public:
 #if (GPSParser_INCLUDE_GPGGA || GPSParser_INCLUDE_GPRMC)
@@ -221,7 +221,7 @@ class CGPSParser_Data
 	CGPSParser_SatInfo m_satInfo[GPS_MAX_SATS];	// Info about all sats in view (GPGSV AND GPGSA)
 #endif
 
-	CGPSParser_Data()
+	CGPSParserData()
 	{
 		clear();
 	}
@@ -287,7 +287,7 @@ class CGPSParser_Data
 #endif
 	}
 
-	CGPSParser_Data &operator=(const CGPSParser_Data &_pd)
+	CGPSParserData &operator=(const CGPSParserData &_pd)
 	{
 #if (GPSParser_INCLUDE_GPGGA || GPSParser_INCLUDE_GPRMC)
 		m_GPSLocked = _pd.m_GPSLocked;
@@ -347,7 +347,7 @@ class CGPSParser_Data
 		return *this;
 	}
 
-	bool operator==(const CGPSParser_Data &_pd)
+	bool operator==(const CGPSParserData &_pd)
 	{
 #if (GPSParser_INCLUDE_GPGGA || GPSParser_INCLUDE_GPRMC)
 		if(m_GPSLocked != _pd.m_GPSLocked) return false;
@@ -407,7 +407,7 @@ class CGPSParser_Data
 		return true;
 	}
 
-	bool operator!=(const CGPSParser_Data &_pd)
+	bool operator!=(const CGPSParserData &_pd)
 	{
 		return !(*this == _pd);
 	}
