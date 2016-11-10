@@ -31,10 +31,10 @@
 #define GPS_NMEA_DOP_FACTOR			(5.)							// Factor for DOP to meters
 
 // Select which sentences to include
-#define GPSParser_INCLUDE_GPGGA		(0)	// Global Positioning System Fix Data (Lat, lon, time, fix quality, num sats, hdop, altitude)
+#define GPSParser_INCLUDE_GPGGA		(1)	// Global Positioning System Fix Data (Lat, lon, time, fix quality, num sats, hdop, altitude)
 #define GPSParser_INCLUDE_GPRMC		(1)	// Recommended minimum specific GPS/Transit data (time, lat, lon, speed, course, date)
-#define GPSParser_INCLUDE_GPGSA		(0)	// GPS DOP and active satellites (list of sats in position fix, pdop, hdop, vdop)
-#define GPSParser_INCLUDE_GPGSV		(0)	// GPS Satellites in view (list of sats in view, and their asimuth and elevation)
-#define GPSParser_INCLUDE_GPVTG		(0)	// Track made good and ground speed
+#define GPSParser_INCLUDE_GPGSA		(1)	// GPS DOP and active satellites (list of sats in position fix, pdop, hdop, vdop)
+#define GPSParser_INCLUDE_GPGSV		(1)	// GPS Satellites in view (list of sats in view, and their asimuth and elevation)
+#define GPSParser_INCLUDE_GPVTG		(1)	// Track made good and ground speed
 
 #endif
