@@ -71,7 +71,7 @@ protected:
 	GPSSentence_T SelectSentence();
 
 	// Accumulated parser data
-	CGPSParser_Data m_GPSData;
+	CGPSParserData m_GPSData;
 
 
 #ifdef CGPSParser_DEBUG
@@ -86,7 +86,7 @@ public:
 
 	// Returns true if any sentences were processed (data may have changed)
 	bool parse(const unsigned char _buf[], unsigned int _bufLen);
-	CGPSParser_Data &getGPSData() { return m_GPSData; }
+	CGPSParserData &getGPSData() { return m_GPSData; }
 
 #ifdef CGPSParser_DEBUG
 	int getLineNumber() { return m_GPSParser_LineNumber; }
