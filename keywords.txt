@@ -1,0 +1,22 @@
+CGPSParser	KEYWORD1
+reset	KEYWORD2
+parse	KEYWORD2
+getGPSData	KEYWORD2
+getLineNumber	KEYWORD2
+
+CGPSParser_Data	KEYWORD2
+clear	KEYWORD2
+
+CGPSPos	KEYWORD1
+getLat	KEYWORD2
+getLon	KEYWORD2
+setLat	KEYWORD2
+setLon	KEYWORD2
+setPosition	KEYWORD2
+getPosition	KEYWORD2
+clear	KEYWORD2
+distanceToInMeters	KEYWORD2
+trueHeadingTo	KEYWORD2
+displaceByMeters	KEYWORD2
+
+
