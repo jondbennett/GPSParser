@@ -8,7 +8,6 @@
 
 #include "GPSParser.h"
 
-/*
 static int GPSSentence_Convert_Int_Data(const char _term[])
 {
 	// If the term is empty then return GPS_INVALID_DATA
@@ -17,7 +16,6 @@ static int GPSSentence_Convert_Int_Data(const char _term[])
 
 	return atoi(_term);
 }
-*/
 
 static long GPSSentence_Convert_Long_Data(const char _term[])
 {
@@ -52,7 +50,6 @@ static double GPSSentence_Convert_LL_to_DD(const char _term[])
 	return ll;
 }
 
-/*
 static void GPSSentence_Transfer_Int_Data(int &_from, int &_to)
 {
 	if(GPS_IS_VALID_DATA(_from))
@@ -60,7 +57,6 @@ static void GPSSentence_Transfer_Int_Data(int &_from, int &_to)
 	else
 		_to = GPS_INVALID_DATA;
 }
-*/
 
 static void GPSSentence_Transfer_Double_Data(double &_from, double &_to)
 {
