@@ -203,7 +203,7 @@ bool CGPSSentence_GPGGA::processTerm(const char _term[], int _termNumber, GPSSen
 	return true;
 }
 
-void CGPSSentence_GPGGA::transferData(CGPSParser_Data &_gpsParserData, GPSSentenceData_T &_sentenceData)
+void CGPSSentence_GPGGA::transferData(CGPSParserData &_gpsParserData, GPSSentenceData_T &_sentenceData)
 {
 	// Time
 	if(GPS_IS_VALID_DATA(_sentenceData.GPGGA.m_utc))
@@ -436,7 +436,7 @@ bool CGPSSentence_GPRMC::processTerm(const char _term[], int _termNumber, GPSSen
 	return true;
 }
 
-void CGPSSentence_GPRMC::transferData(CGPSParser_Data &_gpsParserData, GPSSentenceData_T &_sentenceData)
+void CGPSSentence_GPRMC::transferData(CGPSParserData &_gpsParserData, GPSSentenceData_T &_sentenceData)
 {
 	// Time
 	if(GPS_IS_VALID_DATA(_sentenceData.GPRMC.m_utc))
@@ -624,7 +624,7 @@ bool CGPSSentence_GPGSA::processTerm(const char _term[], int _termNumber, GPSSen
 	return true;
 }
 
-void CGPSSentence_GPGSA::transferData(CGPSParser_Data &_gpsParserData, GPSSentenceData_T &_sentenceData)
+void CGPSSentence_GPGSA::transferData(CGPSParserData &_gpsParserData, GPSSentenceData_T &_sentenceData)
 {
 	int GPGSA_SatIndex;
 	int GPSData_SatIndex;
@@ -836,7 +836,7 @@ bool CGPSSentence_GPGSV::processTerm(const char _term[], int _termNumber, GPSSen
 	return true;
 }
 
-void CGPSSentence_GPGSV::transferData(CGPSParser_Data &_gpsParserData, GPSSentenceData_T &_sentenceData)
+void CGPSSentence_GPGSV::transferData(CGPSParserData &_gpsParserData, GPSSentenceData_T &_sentenceData)
 {
 	if(GPS_IS_VALID_DATA(_sentenceData.GPGSV.m_messageNumber) &&
 			(_sentenceData.GPGSV.m_messageNumber > 0))
@@ -952,7 +952,7 @@ bool CGPSSentence_GPVTG::processTerm(const char _term[], int _termNumber, GPSSen
 	return true;
 }
 
-void CGPSSentence_GPVTG::transferData(CGPSParser_Data &_gpsParserData, GPSSentenceData_T &_sentenceData)
+void CGPSSentence_GPVTG::transferData(CGPSParserData &_gpsParserData, GPSSentenceData_T &_sentenceData)
 {
 	// True ground track
 	GPSSentence_Transfer_Double_Data(_sentenceData.GPVTG.m_trackTrue, _gpsParserData.m_groundTrack);

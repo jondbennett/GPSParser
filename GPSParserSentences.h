@@ -143,7 +143,7 @@ class CGPSSentence_GPGGA
 
 	static void init(GPSSentenceData_T &_sentenceData);
 	static bool processTerm(const char _term[], int _termNumber, GPSSentenceData_T &_sentenceData);
-	static void transferData(CGPSParser_Data &_gpsParserData, GPSSentenceData_T &_sentenceData);
+	static void transferData(CGPSParserData &_gpsParserData, GPSSentenceData_T &_sentenceData);
 };
 #endif
 
@@ -154,7 +154,7 @@ class CGPSSentence_GPRMC
 
 	static void init(GPSSentenceData_T &_sentenceData);
 	static bool processTerm(const char _term[], int _termNumber, GPSSentenceData_T &_sentenceData);
-	static void transferData(CGPSParser_Data &_gpsParserData, GPSSentenceData_T &_sentenceData);
+	static void transferData(CGPSParserData &_gpsParserData, GPSSentenceData_T &_sentenceData);
 };
 #endif
 
@@ -165,7 +165,7 @@ class CGPSSentence_GPGSA
 
 	static void init(GPSSentenceData_T &_sentenceData);
 	static bool processTerm(const char _term[], int _termNumber, GPSSentenceData_T &_sentenceData);
-	static void transferData(CGPSParser_Data &_gpsParserData, GPSSentenceData_T &_sentenceData);
+	static void transferData(CGPSParserData &_gpsParserData, GPSSentenceData_T &_sentenceData);
 };
 #endif
 
@@ -176,7 +176,7 @@ class CGPSSentence_GPGSV
 
 	static void init(GPSSentenceData_T &_sentenceData);
 	static bool processTerm(const char _term[], int _termNumber, GPSSentenceData_T &_sentenceData);
-	static void transferData(CGPSParser_Data &_gpsParserData, GPSSentenceData_T &_sentenceData);
+	static void transferData(CGPSParserData &_gpsParserData, GPSSentenceData_T &_sentenceData);
 };
 #endif
 #if (GPSParser_INCLUDE_GPVTG)
@@ -186,7 +186,7 @@ class CGPSSentence_GPVTG
 
 	static void init(GPSSentenceData_T &_sentenceData);
 	static bool processTerm(const char _term[], int _termNumber, GPSSentenceData_T &_sentenceData);
-	static void transferData(CGPSParser_Data &_gpsParserData, GPSSentenceData_T &_sentenceData);
+	static void transferData(CGPSParserData &_gpsParserData, GPSSentenceData_T &_sentenceData);
 };
 #endif
 
