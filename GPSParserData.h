@@ -3,8 +3,8 @@
 //
 // GPS Parser Common data
 ////////////////////////////////////////////////////////////
-#ifndef GPSPARSER_DATA_H
-#define GPSPARSER_DATA_H
+#ifndef GPSPARSERDATA_H
+#define GPSPARSERDATA_H
 
 //////////////////////////////////////////////
 // Embedded common data types
