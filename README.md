@@ -12,6 +12,8 @@ You can have as many instances as you wish.
 The GPSDefs.h file lets you indicate (at compile time) which GPS sentences you want to parse. Any data in the GPSParserData object
 that is unnecessary is removed from the structure at compile time so the memory footprint is as small as possible.
 
+To be clear: You will generally use ONLY two objects: One instance of CGPSParser to do the actual parsing of the data. From this object you will request its data object which is a REFERENCE to a CGPSParserData object. You will then access its member variables to discover the information in the GPS data stream.  
+
 So...
 Instantiate the object:
 ```
