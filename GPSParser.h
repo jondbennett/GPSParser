@@ -6,7 +6,7 @@
 #ifndef GPSPARSER_H
 #define GPSPARSER_H
 
-#define CGPSParser_DEBUG
+//#define CGPSParser_DEBUG
 
 #include "GPSDefs.h"
 #include "GPSParserData.h"
@@ -76,6 +76,7 @@ protected:
 
 #ifdef CGPSParser_DEBUG
 	int m_GPSParser_LineNumber;	// We start on line one
+	int m_GPSParser_ValidLines;
 #endif
 
 public:
@@ -90,6 +91,7 @@ public:
 
 #ifdef CGPSParser_DEBUG
 	int getLineNumber() { return m_GPSParser_LineNumber; }
+	int getValidLines() { return m_GPSParser_ValidLines; }
 #endif
 };
 

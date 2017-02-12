@@ -20,6 +20,12 @@
 ////////////////////////////////////////////////////////////
 CGPSParser::CGPSParser()
 {
+
+#ifdef CGPSParser_DEBUG
+	m_GPSParser_LineNumber = 1;
+	m_GPSParser_ValidLines = 0;
+#endif
+
 	reset();
 }
 
@@ -139,26 +145,41 @@ bool CGPSParser::parseChar(unsigned char _c)
 #if (GPSParser_INCLUDE_GPGGA)
 							case GPSSentence_T_GPGGA:
 								CGPSSentence_GPGGA::transferData(m_GPSData, m_gpsSentenceData);
+#ifdef CGPSParser_DEBUG
+								m_GPSParser_ValidLines++;
+#endif
 								break;
 #endif
 #if (GPSParser_INCLUDE_GPRMC)
 							case GPSSentence_T_GPRMC:
 								CGPSSentence_GPRMC::transferData(m_GPSData, m_gpsSentenceData);
+#ifdef CGPSParser_DEBUG
+								m_GPSParser_ValidLines++;
+#endif
 								break;
 #endif
 #if (GPSParser_INCLUDE_GPGSA)
 							case GPSSentence_T_GPGSA:
 								CGPSSentence_GPGSA::transferData(m_GPSData, m_gpsSentenceData);
+#ifdef CGPSParser_DEBUG
+								m_GPSParser_ValidLines++;
+#endif
 								break;
 #endif
 #if (GPSParser_INCLUDE_GPGSV)
 							case GPSSentence_T_GPGSV:
 								CGPSSentence_GPGSV::transferData(m_GPSData, m_gpsSentenceData);
+#ifdef CGPSParser_DEBUG
+								m_GPSParser_ValidLines++;
+#endif
 								break;
 #endif
 #if (GPSParser_INCLUDE_GPVTG)
 							case GPSSentence_T_GPVTG:
 								CGPSSentence_GPVTG::transferData(m_GPSData, m_gpsSentenceData);
+#ifdef CGPSParser_DEBUG
+								m_GPSParser_ValidLines++;
+#endif
 								break;
 #endif
 						}
@@ -321,10 +342,6 @@ void CGPSParser::reset()
 	m_checksum = 0;
 
 	m_currentSentenceType = GPSSentence_T_Unknown;
-
-#ifdef CGPSParser_DEBUG
-	m_GPSParser_LineNumber = 1;
-#endif
 }
 
 unsigned char CGPSParser::from_hex(unsigned char _a)

@@ -19,15 +19,6 @@ class CGPSParser_Time
 		m_hour = m_minute = m_second = GPS_INVALID_DATA;
 	}
 
-	CGPSParser_Time &operator=(const CGPSParser_Time &_time)
-	{
-		m_hour = _time.m_hour;
-		m_minute = _time.m_minute;
-		m_second = _time.m_second;
-
-		return *this;
-	}
-
 	bool operator==(const CGPSParser_Time &_time)
 	{
 		if(m_hour != _time.m_hour) return false;
@@ -54,15 +45,6 @@ public:
 		m_year = m_month = m_day = GPS_INVALID_DATA;
 	}
 
-	CGPSParser_Date &operator=(const CGPSParser_Date &_date)
-	{
-		m_year = _date.m_year;
-		m_month = _date.m_month;
-		m_day = _date.m_day;
-
-		return *this;
-	}
-
 	bool operator==(const CGPSParser_Date &_date)
 	{
 		if(m_year != _date.m_year) return false;
@@ -87,13 +69,6 @@ class CGPSParser_Position
 	CGPSParser_Position()
 	{
 		m_lat = m_lon = GPS_INVALID_DATA;
-	}
-
-	CGPSParser_Position &operator=(const CGPSParser_Position &_pos)
-	{
-		m_lat = _pos.m_lat;
-		m_lon = _pos.m_lon;
-		return *this;
 	}
 
 	bool operator==(const CGPSParser_Position &_pos)
@@ -133,18 +108,6 @@ class CGPSParser_SatInfo
 		m_azimuth = GPS_INVALID_DATA;
 		m_signalStrength = GPS_INVALID_DATA;
 	}
-
-	CGPSParser_SatInfo &operator=(const CGPSParser_SatInfo &_satInfo)
-	{
-		m_satPRNID = _satInfo.m_satPRNID;
-		m_inUse = _satInfo.m_inUse;
-		m_elevation = _satInfo.m_elevation;
-		m_azimuth = _satInfo.m_azimuth;
-		m_signalStrength = _satInfo.m_signalStrength;
-
-		return *this;
-	}
-
 
 	bool operator==(const CGPSParser_SatInfo &_satInfo)
 	{
@@ -285,66 +248,6 @@ class CGPSParserData
 		for(int iSatIndex = 0; iSatIndex < GPS_MAX_SATS; ++iSatIndex)
 			m_satInfo[iSatIndex].clear();
 #endif
-	}
-
-	CGPSParserData &operator=(const CGPSParserData &_pd)
-	{
-#if (GPSParser_INCLUDE_GPGGA || GPSParser_INCLUDE_GPRMC)
-		m_GPSLocked = _pd.m_GPSLocked;
-#endif
-
-#if (GPSParser_INCLUDE_GPGGA)
-		m_fixQuality = _pd.m_fixQuality;
-		m_nSatellites = _pd.m_nSatellites;
-#endif
-
-#if (GPSParser_INCLUDE_GPGSA)
-		m_modeAutomatic = _pd.m_modeAutomatic;
-		m_fixType = _pd.m_fixType;
-#endif
-
-#if (GPSParser_INCLUDE_GPGGA)
-		m_diffFixAge = _pd.m_diffFixAge;
-		m_diffStationID = _pd.m_diffStationID;
-#endif
-
-#if (GPSParser_INCLUDE_GPGGA || GPSParser_INCLUDE_GPRMC)
-		m_time = _pd.m_time;
-#endif
-
-#if (GPSParser_INCLUDE_GPRMC)
-		m_date = _pd.m_date;
-#endif
-
-#if (GPSParser_INCLUDE_GPGGA)
-		m_altitude = _pd.m_altitude;
-#endif
-
-#if (GPSParser_INCLUDE_GPGGA || GPSParser_INCLUDE_GPRMC)
-		m_position = _pd.m_position;
-#endif
-
-#if (GPSParser_INCLUDE_GPRMC || GPSParser_INCLUDE_GPVTG)
-		m_groundSpeedKPH = _pd.m_groundSpeedKPH;
-		m_groundTrack = _pd.m_groundTrack;
-		m_magDecl = _pd.m_magDecl;
-#endif
-
-#if (GPSParser_INCLUDE_GPGGA || GPSParser_INCLUDE_GPGSA)
-		m_accuracyHorizontal = _pd.m_accuracyHorizontal;
-#endif
-
-#if (GPSParser_INCLUDE_GPGSA)
-		m_accuracyVertical = _pd.m_accuracyVertical;
-		m_accuracyPositional = _pd.m_accuracyPositional;
-#endif
-
-#if (GPSParser_INCLUDE_GPGSV || GPSParser_INCLUDE_GPGSA)
-		for(int iSatIndex = 0; iSatIndex < GPS_MAX_SATS; ++iSatIndex)
-			m_satInfo[iSatIndex] = _pd.m_satInfo[iSatIndex];
-#endif
-
-		return *this;
 	}
 
 	bool operator==(const CGPSParserData &_pd)
