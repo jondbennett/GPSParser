@@ -40,6 +40,6 @@ if(gpsParser.getGPSData().m_GPSLocked)
 ```
 
 Finally, there is a CGPSPos object that can be used to measure distance between two points, heading from one point to another,
-and deal with movement. It can be ordered to displace itself by some distance along a radial. This objec is not required for the parser so don't include it in your code if it is not needed.
+and deal with movement. It can be ordered to displace itself by some distance along a radial. This object is not required for the parser so don't include it in your code if it is not needed.
 
 
